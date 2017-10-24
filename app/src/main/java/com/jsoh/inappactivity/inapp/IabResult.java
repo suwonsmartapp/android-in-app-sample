@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.example.inappactivity.inapp;
+package com.jsoh.inappactivity.inapp;
 
 /**
  * Represents the result of an in-app billing operation.

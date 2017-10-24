@@ -1,5 +1,5 @@
 
-package com.example.inappactivity.inapp;
+package com.jsoh.inappactivity.inapp;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

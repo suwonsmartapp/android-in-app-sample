@@ -4,10 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.inappactivity.MainActivity">
+    tools:context="com.jsoh.inappactivity.MainActivity">
 
     <Button
         android:id="@+id/buy_item_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1달 구독" />
+
+    <Button
+        android:id="@+id/buy_item2_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="아이템 구입" />

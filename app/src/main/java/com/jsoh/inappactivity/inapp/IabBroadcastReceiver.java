@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.example.inappactivity.inapp;
+package com.jsoh.inappactivity.inapp;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

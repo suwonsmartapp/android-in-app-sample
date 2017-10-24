@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.example.inappactivity.inapp;
+package com.jsoh.inappactivity.inapp;
 
 import java.util.ArrayList;
 import java.util.HashMap;

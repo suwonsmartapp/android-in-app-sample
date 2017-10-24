@@ -1,5 +1,5 @@
 
-package com.example.inappactivity.inapp;
+package com.jsoh.inappactivity.inapp;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -18,6 +18,7 @@ public abstract class InAppActivity extends AppCompatActivity implements
     // TODO : 상품 ID 정의
     // 광고 없애기 상품 : no_ad_month (1개월)
     static final String SKU_NO_AD = "no_ad_month";
+    static final String SKU_ITEM1 = "item1";
 
     // (arbitrary) request code for the purchase flow
     static final int RC_REQUEST = 10001;
@@ -33,6 +34,7 @@ public abstract class InAppActivity extends AppCompatActivity implements
 
     // 구독 콜백 예시
     abstract public void onQuerySubscribe(boolean isSubscribed);
+    abstract public void onItem1Bye();
 
     // Listener that's called when we finish querying the items and
     // subscriptions we own
@@ -97,6 +99,11 @@ public abstract class InAppActivity extends AppCompatActivity implements
                 Log.d(TAG, "No_Ad subscription purchased.");
                 alert("구매가 완료 되었습니다");
                 mSubscribedToNoAd = true;
+            } else if (purchase.getSku().equals(SKU_ITEM1)) {
+                // 광고 제거 상품을 구매 했다면 적용
+                Log.d(TAG, "No_Ad subscription purchased.");
+                alert("구매가 완료 되었습니다");
+                onItem1Bye();
             }
         }
     };
@@ -262,6 +269,24 @@ public abstract class InAppActivity extends AppCompatActivity implements
         try {
             mHelper.launchSubscriptionPurchaseFlow(this,
                     SKU_NO_AD, RC_REQUEST, mPurchaseFinishedListener, payload);
+        } catch (IabHelper.IabAsyncInProgressException e) {
+            complain("Error launching purchase flow. Another async operation in progress.");
+            // setWaitScreen(false);
+        }
+    }
+
+    public void onItem1BuyClicked() {
+        /*
+         * TODO: for security, generate your payload here for verification. See
+         * the comments on verifyDeveloperPayload() for more info. Since this is
+         * a SAMPLE, we just use an empty string, but on a production app you
+         * should carefully generate this.
+         */
+        String payload = "";
+
+        try {
+            mHelper.launchSubscriptionPurchaseFlow(this,
+                    SKU_ITEM1, RC_REQUEST, mPurchaseFinishedListener, payload);
         } catch (IabHelper.IabAsyncInProgressException e) {
             complain("Error launching purchase flow. Another async operation in progress.");
             // setWaitScreen(false);

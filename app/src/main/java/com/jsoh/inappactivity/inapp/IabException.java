@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.example.inappactivity.inapp;
+package com.jsoh.inappactivity.inapp;
 
 /**
  * Exception thrown when something went wrong with in-app billing.

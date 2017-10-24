@@ -1,4 +1,4 @@
-package com.example.inappactivity;
+package com.jsoh.inappactivity;
 
 import org.junit.Test;
 
